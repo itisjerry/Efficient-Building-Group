@@ -2765,7 +2765,8 @@ export default function App() {
 
                   {/* Main Headline */}
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                    <span className="block text-slate-50">Building San Diego's</span>
+                    <span className="block text-slate-50">Building</span>
+                    <span className="block text-slate-50">San Diego's</span>
                     <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">Dream Homes</span>
                   </h1>
 
