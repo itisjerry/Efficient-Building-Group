@@ -836,17 +836,46 @@ function CostCalculatorModal({ open, onClose }) {
 
 function GCTrustSection() {
   return (
-    <section id="gc-partners" className="py-16 bg-gradient-to-b from-slate-950 to-slate-900 border-y border-slate-800 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gc-partners" className="py-16 border-y border-slate-800 relative overflow-hidden min-h-[600px]">
+      {/* Background Image - FULL SECTION COVERAGE */}
+      <div className="absolute inset-0 z-0">
+        {/* Main background image with full coverage */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://plus.unsplash.com/premium_photo-1663134218652-13d6c72dc1a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'no-repeat',
+            filter: 'brightness(1.2) contrast(0.9)',
+          }}
+          aria-hidden="true"
+        />
+        
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-900/80"></div>
+        
+        {/* Construction pattern overlay for texture */}
+        <div className="absolute inset-0 opacity-10 blueprint-bg"></div>
+        
+        {/* Large construction icons */}
+        <div className="absolute top-20 left-20 text-7xl opacity-15 animate-pulse">🔨</div>
+        <div className="absolute bottom-40 right-20 text-7xl opacity-15 animate-truck">🏗️</div>
+        <div className="absolute top-1/2 left-1/3 text-6xl opacity-15">📐</div>
+        <div className="absolute bottom-1/3 right-1/3 text-6xl opacity-15">🧱</div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-300 mb-4">
-            <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/30 backdrop-blur-md px-5 py-2.5 text-sm font-semibold text-emerald-300 mb-6 border border-emerald-500/40 shadow-lg">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
             General Contractor Resources
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6">
             <span className="text-emerald-300">Trusted Partner</span> for GCs & Developers
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto backdrop-blur-sm bg-slate-900/30 rounded-xl p-4">
             We provide reliable subcontracting services with proven performance metrics and transparent communication
           </p>
         </div>
@@ -878,16 +907,19 @@ function GCTrustSection() {
               desc: 'Experience Modification Rate (5-year avg)'
             }
           ].map((metric, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-slate-900 to-slate-800/50 border border-slate-700 rounded-xl p-6 text-center">
-              <div className="text-3xl mb-3">{metric.icon}</div>
-              <div className="font-bold text-slate-100 mb-1">{metric.title}</div>
-              <div className="text-2xl font-bold text-emerald-300 mb-2">{metric.stats}</div>
-              <div className="text-sm text-slate-400">{metric.desc}</div>
+            <div 
+              key={idx} 
+              className="bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-xl p-6 text-center hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/30 transition-all duration-300 hover:-translate-y-2 shadow-xl"
+            >
+              <div className="text-4xl mb-4">{metric.icon}</div>
+              <div className="font-bold text-slate-100 mb-2 text-lg">{metric.title}</div>
+              <div className="text-2xl font-bold text-emerald-300 mb-3">{metric.stats}</div>
+              <div className="text-sm text-slate-300">{metric.desc}</div>
             </div>
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-slate-900 to-slate-800/30 border border-slate-700 rounded-2xl p-8">
+        <div className="bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-2xl p-8 shadow-2xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-slate-100 mb-4 flex items-center gap-2">
@@ -922,29 +954,29 @@ function GCTrustSection() {
                   });
                   window.dispatchEvent(event);
                 }}
-                className="inline-flex items-center gap-2 bg-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-lg hover:bg-emerald-400 transition"
+                className="inline-flex items-center gap-2 bg-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-lg hover:bg-emerald-400 transition hover:shadow-2xl hover:shadow-emerald-500/30 transform hover:scale-105"
               >
                 <span>📋</span>
                 <span>Request GC Partnership Info</span>
               </button>
             </div>
             <div className="space-y-4">
-              <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="p-5 rounded-xl bg-slate-800/80 border border-slate-700/80">
+                <div className="flex items-center gap-3 mb-3">
                   <span className="text-2xl">📄</span>
                   <span className="font-semibold text-slate-100">Documentation Available</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-3">
                   {['COI (Insurance)', 'W9 Form', 'License Copy', 'Safety Plan', 'References', 'Portfolio'].map((doc, idx) => (
-                    <div key={idx} className="text-sm text-slate-300 flex items-center gap-2">
+                    <div key={idx} className="text-sm text-slate-300 flex items-center gap-2 p-2 bg-slate-900/50 rounded-lg">
                       <span className="text-emerald-400">📎</span>
                       <span>{doc}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="p-5 rounded-xl bg-slate-800/80 border border-slate-700/80">
+                <div className="flex items-center gap-3 mb-3">
                   <span className="text-2xl">🏆</span>
                   <span className="font-semibold text-slate-100">GC Testimonials</span>
                 </div>
@@ -1028,7 +1060,7 @@ function IndustryRecognitionSection() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-900/50 to-slate-950 border-y border-slate-800/50">
+    <section className="py-16 from-slate-900/50 to-slate-950 border-y border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-300 mb-4">
@@ -2861,75 +2893,173 @@ export default function App() {
         {/* GC Trust Section */}
         <GCTrustSection />
 
-        {/* Construction Services Section */}
-        <section id="services" className="border-b border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900 py-16 md:py-20 relative overflow-hidden">
-          {/* Construction background elements */}
-          <div className="absolute top-10 right-10 text-4xl opacity-5">🔨</div>
-          <div className="absolute bottom-10 left-10 text-4xl opacity-5">🏗️</div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-300 mb-4">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 mr-2"></span>
-                Residential Construction Services
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">Construction</span> Solutions
-              </h2>
-              <p className="text-lg text-slate-400">
-                Expert construction craftsmanship for San Diego homes. Licensed, insured, and dedicated to building quality.
-              </p>
-            </div>
+{/* Construction Services Section with Slider Background */}
+<section id="services" className="border-b border-slate-800 relative overflow-hidden py-16 md:py-20 min-h-[800px]">
+  {/* Slider Background - Multiple Construction Images */}
+  <div className="absolute inset-0 z-0 overflow-hidden">
+    {/* Service-specific background images for slider */}
+    {[
+      {
+        id: 1,
+        src: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Custom Home Construction",
+        filter: "brightness(0.9)"
+      },
+      {
+        id: 2,
+        src: "https://images.unsplash.com/photo-1643810771709-e9e23572e271?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Kitchen Renovations",
+        filter: "brightness(0.9)"
+      },
+      {
+        id: 3,
+        src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Bathroom Construction",
+        filter: "brightness(0.9)"
+      },
+      {
+        id: 4,
+        src: "https://plus.unsplash.com/premium_photo-1683133686509-a84ea0c8de4e?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Home Additions",
+        filter: "brightness(0.9)"
+      },
+      {
+        id: 5,
+        src: "https://plus.unsplash.com/premium_photo-1681691757922-fe230ecaa072?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Design & Planning",
+        filter: "brightness(0.9)"
+      }
+    ].map((image, index) => (
+      <div
+        key={image.id}
+        className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+        style={{
+          opacity: index === 0 ? 1 : 0,
+          animation: `crossfade 25s infinite ${index * 5}s`,
+          animationFillMode: 'forwards'
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("${image.src}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'no-repeat',
+            filter: image.filter,
+          }}
+          aria-hidden="true"
+        />
+      </div>
+    ))}
+    
+    {/* Dark gradient overlay for better text contrast */}
+    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-950/80 to-slate-900/85"></div>
+    
+    {/* Blueprint pattern overlay for texture */}
+    <div className="absolute inset-0 opacity-10 blueprint-bg"></div>
+    
+    {/* Construction decorative elements */}
+    <div className="absolute top-20 left-20 text-6xl opacity-20 animate-hammer">🔨</div>
+    <div className="absolute bottom-40 right-20 text-6xl opacity-20 animate-tool">🏗️</div>
+    <div className="absolute top-1/3 left-1/4 text-5xl opacity-20">📐</div>
+    <div className="absolute bottom-1/3 right-1/4 text-5xl opacity-20">🧱</div>
+    <div className="absolute top-40 right-1/4 text-5xl opacity-20 animate-pulse">🏠</div>
+    <div className="absolute bottom-60 left-1/4 text-5xl opacity-20">🔧</div>
+  </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-              {services.map((s) => (
-                <ConstructionServiceCard key={s.id} service={s} onRequest={handleRequestQuote} />
-              ))}
-            </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <div className="inline-flex items-center rounded-full bg-emerald-500/30 backdrop-blur-md px-5 py-2.5 text-sm font-semibold text-emerald-300 mb-6 border border-emerald-500/40 shadow-lg">
+        <span className="h-2 w-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+        Residential Construction Services
+      </div>
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">Construction</span> Solutions
+      </h2>
+      <p className="text-xl text-slate-300 backdrop-blur-sm bg-slate-900/30 rounded-xl p-4">
+        Expert construction craftsmanship for San Diego homes. Licensed, insured, and dedicated to building quality.
+      </p>
+    </div>
 
-            {/* Construction CTA */}
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800/50 border border-slate-700 relative overflow-hidden">
-              {/* Blueprint pattern */}
-              <div className="absolute inset-0 opacity-5 blueprint-bg"></div>
-              
-              <div className="relative z-10">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-                  <button
-                    onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all group"
-                  >
-                    <span className="group-hover:animate-hammer">🔨</span>
-                    <span>Schedule Construction Visit</span>
-                    <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
-                  </button>
-                  <button
-                    onClick={() => setOpenCalculatorModal(true)}
-                    className="inline-flex items-center gap-3 border-2 border-slate-700 hover:border-emerald-500 text-slate-100 font-semibold px-8 py-4 rounded-full text-lg hover:bg-slate-900/50 transition-all"
-                  >
-                    <span className="animate-blueprint">💰</span>
-                    <span>Construction Calculator</span>
-                  </button>
-                </div>
-                <div className="text-sm text-slate-300 flex flex-wrap items-center justify-center gap-4">
-                  <span className="flex items-center gap-2">
-                    <span className="text-emerald-400">✓</span>
-                    <span>Free 3D Construction Design</span>
-                  </span>
-                  <span className="text-slate-600">•</span>
-                  <span className="flex items-center gap-2">
-                    <span className="text-emerald-400">✓</span>
-                    <span>On-Site Construction Quote</span>
-                  </span>
-                  <span className="text-slate-600">•</span>
-                  <span className="flex items-center gap-2">
-                    <span className="text-emerald-400">✓</span>
-                    <span>No Construction Obligation</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+      {services.map((s, index) => (
+        <div 
+          key={s.id}
+          className="group relative"
+          onMouseEnter={() => {
+            // When hovering over a service card, show corresponding background
+            const bgImages = document.querySelectorAll('#services .absolute.inset-0 .transition-opacity');
+            bgImages.forEach((img, i) => {
+              img.style.opacity = i === (index % 5) ? '1' : '0';
+            });
+          }}
+          onMouseLeave={() => {
+            // Resume auto-sliding when not hovering
+            const bgImages = document.querySelectorAll('#services .absolute.inset-0 .transition-opacity');
+            bgImages.forEach((img, i) => {
+              const currentTime = new Date().getTime() / 1000;
+              const slideIndex = Math.floor((currentTime % 25) / 5);
+              img.style.opacity = i === slideIndex ? '1' : '0';
+            });
+          }}
+        >
+          <ConstructionServiceCard service={s} onRequest={handleRequestQuote} />
+        </div>
+      ))}
+    </div>
+
+    {/* Construction CTA */}
+    <div className="text-center p-8 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 relative overflow-hidden shadow-2xl">
+      {/* Subtle construction pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 text-4xl">🔨</div>
+        <div className="absolute bottom-10 right-10 text-4xl">🏗️</div>
+      </div>
+      
+      <div className="relative z-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+          <button
+            onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold px-10 py-5 rounded-full text-lg shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 group min-w-[280px] justify-center"
+          >
+            <span className="text-xl group-hover:animate-hammer">🔨</span>
+            <span>Schedule Construction Visit</span>
+            <span className="text-xl group-hover:translate-x-2 transition-transform">→</span>
+          </button>
+          <button
+            onClick={() => setOpenCalculatorModal(true)}
+            className="inline-flex items-center gap-3 border-2 border-slate-700 hover:border-emerald-500 text-slate-100 font-semibold px-10 py-5 rounded-full text-lg hover:bg-slate-900/50 transition-all transform hover:scale-105 min-w-[280px] justify-center"
+          >
+            <span className="text-xl animate-blueprint">💰</span>
+            <span>Construction Calculator</span>
+          </button>
+        </div>
+        <div className="text-sm text-slate-300 flex flex-wrap items-center justify-center gap-6">
+          <span className="flex items-center gap-2 backdrop-blur-sm bg-slate-800/30 px-4 py-2 rounded-full">
+            <span className="text-emerald-400 text-lg">✓</span>
+            <span>Free 3D Construction Design</span>
+          </span>
+          <span className="text-slate-600">•</span>
+          <span className="flex items-center gap-2 backdrop-blur-sm bg-slate-800/30 px-4 py-2 rounded-full">
+            <span className="text-emerald-400 text-lg">✓</span>
+            <span>On-Site Construction Quote</span>
+          </span>
+          <span className="text-slate-600">•</span>
+          <span className="flex items-center gap-2 backdrop-blur-sm bg-slate-800/30 px-4 py-2 rounded-full">
+            <span className="text-emerald-400 text-lg">✓</span>
+            <span>No Construction Obligation</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    {/* All Construction Projects with Enhanced Gallery */}
+
+        {/* All Construction Projects with Enhanced Gallery */}
 
         {/* All Construction Projects with Enhanced Gallery */}
         <section id="projects" className="border-b border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900 py-16 relative overflow-hidden">
