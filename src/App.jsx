@@ -2435,7 +2435,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 bg-white rounded-full animate-pulse"></span>
-            <span className="font-medium">🏗️ Limited Time: Free 3D Construction Design with Any Quote!</span>
+            <span className="font-medium">🏗️ Limited Time: Get Free Estimate!!! </span>
           </div>
           <button 
             onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
@@ -2484,51 +2484,65 @@ export default function App() {
             </div>
           </div>
 
-          {/* Main Navigation */}
+{/* Main Navigation */}
           <div className="py-3 flex items-center justify-between">
             {/* Logo Section */}
-            <div className="flex items-center gap-3">
-              <a 
-                href="https://ebuildinggroup.com" 
-                className="flex items-center gap-3 group"
-                aria-label="Efficient Building Group Construction Home"
-              >
-                <div className="relative">
-                  <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-slate-950 font-bold text-lg group-hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <span className="group-hover:animate-hammer">🏗️</span>
-                  </div>
-                  <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-amber-400 flex items-center justify-center text-[10px] font-bold">
-                    ✓
-                  </div>
-                </div>
-                <div className="hidden sm:flex flex-col">
-                  <div className="text-sm font-bold tracking-wide text-slate-100 group-hover:text-emerald-300 transition-colors whitespace-nowrap">
-                    Efficient Building Group
-                  </div>
-                  <div className="text-[11px] text-slate-400 -mt-0.5 whitespace-nowrap">
-                    Custom Construction · San Diego, CA
-                  </div>
-                </div>
-              </a>
-              {/* Trust Badge */}
-              <div className="hidden md:flex items-center gap-1 px-2 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
-                <span className="text-xs text-emerald-300 font-semibold">CA #1092345</span>
-              </div>
-            </div>
-
+<div className="flex items-center gap-3">
+  <a 
+    href="https://ebuildinggroup.com" 
+    className="flex items-center gap-3 group"
+    aria-label="Efficient Building Group Construction Home"
+  >
+    <div className="relative">
+      <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-slate-950 font-bold text-lg group-hover:scale-105 transition-transform duration-300 shadow-lg">
+        <span className="group-hover:animate-hammer">🏗️</span>
+      </div>
+      <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-amber-400 flex items-center justify-center text-[10px] font-bold">
+        ✓
+      </div>
+    </div>
+    <div className="hidden sm:flex flex-col">
+      <div className="text-sm font-bold tracking-wide text-slate-100 group-hover:text-emerald-300 transition-colors whitespace-nowrap">
+        Efficient Building Group
+</div>
+      {/* ADD THIS LINE: */}
+      <div className="text-[11px] text-emerald-400 -mt-0.5 whitespace-nowrap font-medium">
+        Custom Construction • San Diego, CA
+      </div>
+    </div>
+  </a>
+  {/* Trust Badge */}
+      {/* MOBILE: Only shows on mobile */}
+    <div className="sm:hidden flex flex-col">
+      <div className="text-sm font-bold text-slate-100 whitespace-nowrap">
+        Efficient Building Group
+      </div>
+      <div className="text-[10px] text-emerald-400 -mt-0.5 whitespace-nowrap font-medium">
+        Custom Construction • San Diego, CA
+      </div>
+    </div>
+  <div className="hidden md:flex items-center gap-1 px-2 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
+    <span className="text-xs text-emerald-300 font-semibold">CA #1092345</span>
+  </div>
+</div>
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1 mx-4" aria-label="Main construction navigation">
               {['Services', 'Projects', 'Process', 'GC Partners', 'Reviews', 'FAQ'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-emerald-300 hover:bg-slate-800/50 transition-colors whitespace-nowrap"
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-emerald-300 hover:bg-slate-800/50 transition-colors whitespace-nowrap relative group/nav"
                 >
                   {item}
+                  {/* ADD THIS BADGE FOR SAN DIEGO: */}
+                  {item === 'Services' && (
+                    <span className="absolute -top-1 -right-1 text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded-full opacity-0 group-hover/nav:opacity-100 transition-opacity">
+                      SD
+                    </span>
+                  )}
                 </a>
               ))}
             </nav>
-
             {/* CTA Buttons */}
             <div className="flex items-center gap-2">
               {/* Desktop CTA Buttons */}
@@ -2571,6 +2585,28 @@ export default function App() {
           {isMenuOpen && (
             <div className="lg:hidden fixed inset-x-0 top-0 z-40 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 animate-in slide-in-from-top-5 pt-20">
               <div className="p-4 space-y-1 max-h-[80vh] overflow-y-auto">
+          {/* Mobile Logo Section */}
+          <div className="flex items-center gap-3 px-4 py-3 mb-4 border-b border-slate-800/50">
+            <div className="relative">
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-slate-950 font-bold text-lg">
+                <span>🏗️</span>
+              </div>
+              <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-amber-400 flex items-center justify-center text-[10px] font-bold">
+                ✓
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-2">
+                <div className="text-base font-bold text-slate-100">
+                  Efficient Building Group
+                </div>
+              </div>
+              <div className="text-xs text-emerald-400 font-medium ml-0.5">
+                Custom Construction • San Diego, CA
+              </div>
+            </div>
+          </div>
+                
                 <div className="flex items-center justify-between mb-4 px-4">
                   <div className="text-sm text-slate-400 flex items-center gap-2">
                     <span>🏗️</span>
@@ -2594,12 +2630,17 @@ export default function App() {
                   >
                     <span className="text-xl">
                       {item === 'GC Partners' ? '🤝' : 
-                       item === 'Services' ? '🏗️' : 
-                       item === 'Projects' ? '📂' : 
-                       item === 'Process' ? '📋' : 
-                       item === 'Reviews' ? '⭐' : '❓'}
+                      item === 'Services' ? '🏗️' : 
+                      item === 'Projects' ? '📂' : 
+                      item === 'Process' ? '📋' : 
+                      item === 'Reviews' ? '⭐' : '❓'}
                     </span>
                     <span>{item}</span>
+                    {item === 'Services' && (
+                      <span className="ml-auto text-xs bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded-full">
+                        San Diego
+                      </span>
+                    )}
                   </a>
                 ))}
                 
@@ -2641,7 +2682,6 @@ export default function App() {
           )}
         </div>
       </header>
-
       {/* Floating Action Button for Mobile */}
       <button
         onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
@@ -3380,31 +3420,31 @@ export default function App() {
 
       {/* Construction Chat Assistant */}
       <ChatAssistant />
-
       {/* Construction-themed Footer */}
       <footer className="bg-gradient-to-b from-slate-950 to-slate-900 border-t border-slate-800 pt-10 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-slate-950 font-bold">
-                  <span className="animate-hammer">🏗️</span>
-                </div>
-                <div>
-                  <div className="font-bold text-slate-100">Efficient Building Group</div>
-                  <div className="text-xs text-slate-400">San Diego Construction Builders</div>
-                </div>
-              </div>
-              <p className="text-sm text-slate-400 mb-4">
-                Licensed, insured custom construction builders serving San Diego County since 2010.
-              </p>
-              <div className="flex items-center gap-3">
-                <a href="#" aria-label="Facebook" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">f</a>
-                <a href="#" aria-label="Instagram" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">ig</a>
-                <a href="#" aria-label="Houzz" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">hz</a>
-                <a href="#" aria-label="Google Reviews" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">g</a>
-              </div>
-            </div>
+              <div>
+  <div className="flex items-center gap-3 mb-4">
+    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-slate-950 font-bold">
+      <span className="animate-hammer">🏗️</span>
+    </div>
+    <div>
+      <div className="font-bold text-slate-100">Efficient Building Group</div>
+      <div className="text-xs text-emerald-400">Custom Construction • San Diego, CA</div> {/* ADDED THIS LINE */}
+      <div className="text-xs text-slate-400">CA License #1092345</div>
+    </div>
+  </div>
+  <p className="text-sm text-slate-400 mb-4">
+    Licensed, insured custom construction builders serving San Diego County since 2010.
+  </p>
+  <div className="flex items-center gap-3">
+    <a href="#" aria-label="Facebook" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">f</a>
+    <a href="#" aria-label="Instagram" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">ig</a>
+    <a href="#" aria-label="Houzz" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">hz</a>
+    <a href="#" aria-label="Google Reviews" className="text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded p-1">g</a>
+  </div>
+</div>
             
             <div>
               <h3 className="font-bold text-slate-100 mb-4 flex items-center gap-2">
