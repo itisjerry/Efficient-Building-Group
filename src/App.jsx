@@ -356,7 +356,7 @@ function HeroContactModal({ open, onClose, initialService }) {
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-2">
                 <div className="text-2xl">📋</div>
-                <h3 className="text-lg font-semibold text-slate-100">Your Construction Team Contact</h3>
+                <h3 className="text-lg font-semibold text-slate-100">Your Contact</h3>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -824,7 +824,7 @@ function CostCalculatorModal({ open, onClose }) {
             aria-label="Get exact quote based on calculation"
           >
             <span>📋</span>
-            <span>Get Exact Construction Quote</span>
+            <span>Get Quote</span>
           </button>
         </div>
       </div>
@@ -1357,7 +1357,7 @@ function ConstructionServiceCard({ service, onRequest }) {
             className="text-sm font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-2 group/btn focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-3 py-2 hover:bg-slate-800/30"
           >
             <span className="group-hover/btn:animate-bounce">🔨</span>
-            <span>Get Construction Quote</span>
+            <span>Get Quote</span>
             <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
           </button>
           <a 
@@ -1484,7 +1484,7 @@ function ChatAssistant() {
     setTimeout(() => {
       setIsTyping(false);
       setMessages(prev => [...prev, { 
-        text: "Great construction question! I'll connect you with our expert team for a detailed answer. Want me to schedule a free site consultation?", 
+        text: "Great question! I'll connect you with our expert team for a detailed answer. Want me to schedule a free site consultation?", 
         sender: 'bot' 
       }]);
     }, 1500);
@@ -1510,7 +1510,7 @@ function ChatAssistant() {
             <div className="flex items-center gap-3">
               <div className="h-3 w-3 rounded-full bg-emerald-400 animate-pulse"></div>
               <div>
-                <span className="font-semibold text-slate-100">Construction Assistant</span>
+                <span className="font-semibold text-slate-100">Jerry</span>
                 <div className="text-xs text-slate-400">Ask about building & remodeling</div>
               </div>
             </div>
@@ -1528,7 +1528,7 @@ function ChatAssistant() {
               <div className="space-y-3">
                 <div className="text-sm text-slate-300 flex items-center gap-2">
                   <span className="text-lg">🏗️</span>
-                  <span>Hi! I can help with construction questions. How can I assist you today?</span>
+                  <span>Hi! How can I assist you today?</span>
                 </div>
                 <div className="space-y-2">
                   {constructionQuestions.map((q, i) => (
@@ -1540,7 +1540,7 @@ function ChatAssistant() {
                         setTimeout(() => {
                           setIsTyping(false);
                           setMessages(prev => [...prev, { 
-                            text: "Great construction question! I'll connect you with our expert team for a detailed answer.", 
+                            text: "Great question! I'll connect you with our expert team for a detailed answer.", 
                             sender: 'bot' 
                           }]);
                         }, 1000);
@@ -1592,7 +1592,7 @@ function ChatAssistant() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Ask about construction..."
+                placeholder="How can i hlep you?"
                 className="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/30"
                 aria-label="Type your construction question"
               />
@@ -1766,14 +1766,6 @@ function ConstructionProcess() {
           </div>
           
           <div className="relative z-10">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-slate-100 mb-2 flex items-center justify-center gap-2">
-                <span>🛠️</span>
-                <span>Professional Construction Tools & Equipment</span>
-                <span>🛠️</span>
-              </h3>
-              <p className="text-slate-400">We use industry-leading tools for precision construction and quality results</p>
-            </div>
             
             <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
               {[
@@ -1947,7 +1939,7 @@ function EnhancedProjectGallery({ projects, onRequestQuote }) {
                   <button
                     onClick={() => onRequestQuote(p.type)}
                     className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-400 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 flex items-center gap-2"
-                    aria-label={`Get construction quote for similar ${p.type} project`}
+                    aria-label={`Get Quote for similar ${p.type} project`}
                   >
                     <span>🔨</span>
                     <span>Get Similar Quote</span>
@@ -1976,9 +1968,9 @@ function EnhancedProjectGallery({ projects, onRequestQuote }) {
                 <button 
                   onClick={() => onRequestQuote(p.type)}
                   className="text-sm text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-2 py-1 hover:bg-slate-800/30"
-                  aria-label={`Get construction quote for ${p.title}`}
+                  aria-label={`Get Quote for ${p.title}`}
                 >
-                  <span>Get Construction Quote</span>
+                  <span>Get Quote</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
@@ -2269,7 +2261,7 @@ export default function App() {
     if (window.gtag) {
       window.gtag('event', 'click', {
         'event_category': 'Button',
-        'event_label': `Request Construction Quote - ${serviceTitle}`,
+        'event_label': `Request Get Quote - ${serviceTitle}`,
         'value': 1
       });
     }
@@ -2441,7 +2433,7 @@ export default function App() {
             onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
             className="text-xs font-bold bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors hidden sm:block flex items-center gap-1"
           >
-            <span>Claim Construction Offer</span>
+            <span>Schedule Site Visit </span>
             <span>→</span>
           </button>
         </div>
@@ -2562,7 +2554,7 @@ export default function App() {
                   aria-label="Free Construction Consultation"
                 >
                   <span className="group-hover/quote:animate-hammer">🔨</span>
-                  <span>Construction Quote</span>
+                  <span>Get Quote</span>
                 </button>
               </div>
 
@@ -2570,7 +2562,7 @@ export default function App() {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="lg:hidden h-10 w-10 rounded-lg border border-slate-700 bg-slate-900/50 flex flex-col items-center justify-center gap-1.5 group/menu"
-                aria-label="Toggle construction menu"
+                aria-label="Toggle menu"
                 aria-expanded={isMenuOpen}
               >
                 <span className={`h-0.5 w-5 bg-slate-300 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
@@ -2610,12 +2602,12 @@ export default function App() {
                 <div className="flex items-center justify-between mb-4 px-4">
                   <div className="text-sm text-slate-400 flex items-center gap-2">
                     <span>🏗️</span>
-                    <span>Construction Menu</span>
+                    <span>Menu</span>
                   </div>
                   <button
                     onClick={() => setIsMenuOpen(false)}
                     className="text-slate-400 hover:text-white p-2"
-                    aria-label="Close construction menu"
+                    aria-label="Close menu"
                   >
                     ✕
                   </button>
@@ -2686,7 +2678,7 @@ export default function App() {
       <button
         onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
         className="lg:hidden fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 shadow-2xl flex items-center justify-center animate-bounce-slow group/fab"
-        aria-label="Request Construction Quote"
+        aria-label="Request Get Quote"
       >
         <span className="text-xl group-hover/fab:scale-110 transition-transform group-hover/fab:animate-hammer">🔨</span>
         <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 animate-ping"></span>
@@ -2784,7 +2776,7 @@ export default function App() {
                       aria-label="Request free construction consultation"
                     >
                       <span className="group-hover/cta:animate-hammer">🔨</span>
-                      <span className="ml-2">Get Construction Quote</span>
+                      <span className="ml-2">Get Quote</span>
                       <span className="ml-2 group-hover/cta:translate-x-1 transition-transform">→</span>
                     </button>
                     <button 
@@ -2793,7 +2785,7 @@ export default function App() {
                       aria-label="Open construction cost calculator"
                     >
                       <span className="animate-blueprint">💰</span>
-                      <span className="ml-2">Construction Calculator</span>
+                      <span className="ml-2">Construction Cost Calculator</span>
                     </button>
                   </div>
 
@@ -3066,7 +3058,7 @@ export default function App() {
             className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold px-10 py-5 rounded-full text-lg shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 group min-w-[280px] justify-center"
           >
             <span className="text-xl group-hover:animate-hammer">🔨</span>
-            <span>Schedule Construction Visit</span>
+            <span>Schedule Site Visit</span>
             <span className="text-xl group-hover:translate-x-2 transition-transform">→</span>
           </button>
           <button
@@ -3074,18 +3066,18 @@ export default function App() {
             className="inline-flex items-center gap-3 border-2 border-slate-700 hover:border-emerald-500 text-slate-100 font-semibold px-10 py-5 rounded-full text-lg hover:bg-slate-900/50 transition-all transform hover:scale-105 min-w-[280px] justify-center"
           >
             <span className="text-xl animate-blueprint">💰</span>
-            <span>Construction Calculator</span>
+            <span>Construction Cost Calculator</span>
           </button>
         </div>
         <div className="text-sm text-slate-300 flex flex-wrap items-center justify-center gap-6">
           <span className="flex items-center gap-2 backdrop-blur-sm bg-slate-800/30 px-4 py-2 rounded-full">
             <span className="text-emerald-400 text-lg">✓</span>
-            <span>Free 3D Construction Design</span>
+            <span>3D Construction Design</span>
           </span>
           <span className="text-slate-600">•</span>
           <span className="flex items-center gap-2 backdrop-blur-sm bg-slate-800/30 px-4 py-2 rounded-full">
             <span className="text-emerald-400 text-lg">✓</span>
-            <span>On-Site Construction Quote</span>
+            <span>On-Site Get Quote</span>
           </span>
           <span className="text-slate-600">•</span>
           <span className="flex items-center gap-2 backdrop-blur-sm bg-slate-800/30 px-4 py-2 rounded-full">
@@ -3098,27 +3090,115 @@ export default function App() {
   </div>
 </section>
 
-    {/* All Construction Projects with Enhanced Gallery */}
+{/* Featured Projects Section with Image Slider Background */}
+<section id="projects" className="relative py-20 overflow-hidden min-h-[800px] flex items-center">
+  {/* Image Slider Background */}
+  <div className="absolute inset-0 z-0">
+    <div className="relative h-full w-full">
+      {/* Construction background images - will crossfade */}
+      {[
+        {
+          src: "https://images.unsplash.com/photo-1542317854-2f0a9f5a1d6a?auto=format&fit=crop&w=2000&q=80",
+          alt: "Modern kitchen construction"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=80",
+          alt: "Luxury bathroom renovation"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=2000&q=80",
+          alt: "Custom home construction"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1507086182422-97bd7ca2413b?auto=format&fit=crop&w=2000&q=80",
+          alt: "Home addition project"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80",
+          alt: "Microcement finishes"
+        }
+      ].map((image, index) => (
+        <div
+          key={index}
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{
+            animation: `crossfade 25s infinite ${index * 5}s`,
+            animationFillMode: 'forwards'
+          }}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="w-full h-full object-cover"
+            style={{ 
+              filter: 'brightness(0.7)',
+              animation: `zoomSlow 25s infinite ${index * 5}s ease-in-out`
+            }}
+          />
+        </div>
+      ))}
+    </div>
+    
+    {/* Dark overlay for text readability */}
+    <div className="absolute inset-0 bg-gradient-to-br from-slate-950/70 via-slate-950/60 to-emerald-950/30"></div>
+  </div>
 
-        {/* All Construction Projects with Enhanced Gallery */}
+  {/* Content Container */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div className="text-center mb-12">
+      <div className="inline-flex items-center rounded-full bg-emerald-500/20 backdrop-blur-sm px-4 py-2 text-xs font-semibold text-emerald-300 mb-4 border border-emerald-500/30">
+        <span className="h-2 w-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+        Featured Construction Projects
+      </div>
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-100">
+        Our <span className="text-emerald-300">Featured Projects</span>
+      </h2>
+      <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+        Browse our portfolio of completed projects showcasing quality craftsmanship and attention to detail.
+      </p>
+    </div>
 
-        {/* All Construction Projects with Enhanced Gallery */}
-        <section id="projects" className="border-b border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900 py-16 relative overflow-hidden">
-          {/* Construction background elements */}
-          <div className="absolute top-5 left-5 text-3xl opacity-5">📐</div>
-          <div className="absolute bottom-5 right-5 text-3xl opacity-5">🧱</div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-3 text-slate-100">Our <span className="text-emerald-300">Construction</span> Projects</h2>
-                <p className="text-slate-400">Filter by construction type to see examples similar to yours.</p>
-              </div>
-            </div>
+    {/* Project Gallery */}
+    <EnhancedProjectGallery projects={allProjects} onRequestQuote={handleRequestQuote} />
 
-            <EnhancedProjectGallery projects={allProjects} onRequestQuote={handleRequestQuote} />
-          </div>
-        </section>
+    {/* Construction CTA Banner */}
+    <div className="mt-16 p-6 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80 shadow-xl">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 className="text-xl font-bold text-slate-100 mb-2 flex items-center gap-2">
+            <span className="text-emerald-400">🏗️</span>
+            <span>Ready to Start Your Project?</span>
+          </h3>
+          <p className="text-slate-300">
+            Get a detailed quote based on your specific construction needs
+          </p>
+        </div>
+        <button 
+          onClick={() => { setSelectedService(null); setOpenHeroModal(true); }}
+          className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 min-w-[200px] justify-center"
+        >
+          <span className="text-lg">📋</span>
+          <span>Get Quote</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* Add animation styles if not already present */}
+  <style>{`
+    @keyframes crossfade {
+      0%, 20% { opacity: 1; }
+      25%, 45% { opacity: 0; }
+      50%, 70% { opacity: 1; }
+      75%, 95% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes zoomSlow {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+  `}</style>
+</section>
 
         {/* Construction Process Section */}
         <ConstructionProcess />
@@ -3133,7 +3213,7 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-100">
-                  Why <span className="text-emerald-300">Choose</span> Our Construction?
+                  Why <span className="text-emerald-300">Choose</span> Efficient Building Group?
                 </h2>
                 <p className="text-lg text-slate-300 mb-8">
                   Local construction expertise, transparent pricing, and craftsmanship that stands the test of time. 
@@ -3279,7 +3359,7 @@ export default function App() {
                 Construction Questions
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-100">
-                Construction <span className="text-emerald-300">FAQ</span>
+                <span className="text-emerald-300">FAQs</span>
               </h2>
               <p className="text-lg text-slate-400">Answers to common construction questions</p>
             </div>
@@ -3376,7 +3456,7 @@ export default function App() {
                 className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all group"
               >
                 <span className="group-hover:animate-hammer">🔨</span>
-                <span>Schedule Construction Visit</span>
+                <span>Schedule Site Visit</span>
                 <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
               </button>
               
@@ -3385,7 +3465,7 @@ export default function App() {
                 className="inline-flex items-center justify-center gap-3 border-2 border-slate-700 hover:border-emerald-500 text-slate-100 font-semibold px-8 py-4 rounded-full text-lg hover:bg-slate-900/50 transition-all"
               >
                 <span className="animate-blueprint">💰</span>
-                <span>Construction Calculator</span>
+                <span>Construction Cost Calculator</span>
               </button>
             </div>
             
@@ -3396,7 +3476,7 @@ export default function App() {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <span className="text-emerald-400">📋</span>
-                <span>Free 3D Construction Design</span>
+                <span>3D Construction Design</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <span className="text-emerald-400">⏱️</span>
@@ -3450,21 +3530,21 @@ export default function App() {
             <div>
               <h3 className="font-bold text-slate-100 mb-4 flex items-center gap-2">
                 <span>🏗️</span>
-                <span>Construction Services</span>
+                <span>What We do</span>
               </h3>
               <ul className="space-y-2">
                 <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Custom Home Construction</a></li>
-                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Home Construction Renovations</a></li>
-                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Microcement Construction</a></li>
-                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Home Addition Construction</a></li>
-                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Construction Design & Planning</a></li>
+                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Home Renovations</a></li>
+                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Microcement Finishes</a></li>
+                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Home Addition</a></li>
+                <li><a href="#services" className="text-sm text-slate-400 hover:text-emerald-400 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Design & Planning</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-bold text-slate-100 mb-4 flex items-center gap-2">
                 <span>📍</span>
-                <span>Construction Areas</span>
+                <span>Working Areas</span>
               </h3>
               <ul className="space-y-2">
                 <li className="text-sm text-slate-400 flex items-center gap-1">🏠 San Diego</li>
@@ -3479,7 +3559,7 @@ export default function App() {
             <div>
               <h3 className="font-bold text-slate-100 mb-4 flex items-center gap-2">
                 <span>📞</span>
-                <span>Construction Contact</span>
+                <span> Contact</span>
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-sm text-slate-400">
@@ -3496,7 +3576,7 @@ export default function App() {
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-400">
                   <span>⏰</span>
-                  <span>Construction Hours: Mon-Fri 8AM-6PM</span>
+                  <span>Working Hours: Mon-Fri 8AM-6PM</span>
                 </li>
               </ul>
             </div>
@@ -3505,13 +3585,12 @@ export default function App() {
           <div className="pt-6 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
             <div className="flex items-center gap-2">
               <span>© {currentYear} Efficient Building Group.</span>
-              <span>All construction rights reserved.</span>
+              <span>All rights reserved.</span>
             </div>
             <div className="flex items-center gap-6">
-              <a href="/privacy" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Construction Privacy</a>
-              <a href="/terms" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Construction Terms</a>
-              <a href="/sitemap" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Construction Sitemap</a>
-              <a href="/accessibility" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Construction Access</a>
+              <a href="/privacy" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Privacy Policy</a>
+              <a href="/terms" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Terms & Conditions </a>
+              <a href="/sitemap" className="hover:text-emerald-300 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/30 rounded px-1">Sitemap</a>
             </div>
           </div>
         </div>
